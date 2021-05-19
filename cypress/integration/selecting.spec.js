@@ -1,3 +1,5 @@
+// See aliasing.spec.js for refactored version of these tests
+
 describe('Text box with max characters', () => {
     it('displays the appropriate remaining character count on first name text box', () => {
         cy.visit('http://localhost:3000/example-3');
