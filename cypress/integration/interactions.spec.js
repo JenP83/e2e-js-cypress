@@ -1,5 +1,5 @@
 // Test accessing an Env variable:
-alert(Cypress.env('MY_ENV_VAR'));
+// alert(Cypress.env('MY_ENV_VAR'));
 
 describe('Basic page interactions', () => {
     beforeEach(() => {
