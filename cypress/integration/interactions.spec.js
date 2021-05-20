@@ -1,3 +1,6 @@
+// Test accessing an Env variable:
+// alert(Cypress.env('MY_ENV_VAR'));
+
 describe('Basic page interactions', () => {
     beforeEach(() => {
         cy.visit('/example-4');
@@ -70,6 +73,17 @@ describe('Basic page interactions', () => {
         cy.get('[data-cy="box-3-selected-name"]')
             .invoke('text')
             .should('equal', 'Option Three');
+    });
+
+    it('should display the name of the most recently hovered item', () => {
+        cy.get('[data-cy="box-4-items-list"] > :nth-child(1)')
+            .trigger('mouseover')
+        // Debug this test:
+        //.debug();
+
+        cy.get('[data-cy="box-4-selected-name"]')
+            .invoke('text')
+            .should('equal', 'Option One');
     });
 
 });
